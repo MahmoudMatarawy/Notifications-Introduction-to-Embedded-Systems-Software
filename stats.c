@@ -26,6 +26,129 @@
 
 /* Size of the Data Set */
 #define SIZE (40)
+/*
+	function name  : find_min
+	function type  : unsigned integer 
+	function input : array pointer , array length
+	function output: None
+	function return: the min number of the array
+*/
+
+unsigned int find_min(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
+
+
+
+}
+
+
+/*
+	function name  : find_max
+	function type  : unsigned integer
+	function input : array pointer , array length
+	function output: None
+	function return: the max number of the array
+*/
+
+unsigned int find_max(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
+
+
+
+
+}
+
+
+
+
+
+
+
+
+/*
+	function name  : find_mean
+	function type  : unsigned integer
+	function input : array pointer , array length
+	function output: None
+	function return: the mean of the array
+*/
+unsigned int find_mean(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
+
+
+
+}
+
+
+
+
+
+
+
+/*
+	function name  : find_median
+	function type  : unsigned integer
+	function input : array pointer , array length
+	function output: None
+	function return: find the median of the array
+*/
+unsigned int find_median(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len){
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*
+	function name  : array_sort
+	function type  : unsigned integer
+	function input : array pointer , array length
+	function output: None
+	function return: sorted array from largest to smallest
+*/
+
+unsigned int array_sort(unsigned int *arr_ptr ,unsigned int arr_len){
+
+
+
+}
+
+
+/*
+	function name  : print_array
+	function type  : void
+	function input : array length , array pointer
+	function output: print all array
+	function return: None 
+*/ 
+void print_array(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len){
+
+
+
+
+}
+
+
+
+/*
+	function name  :  print_statistics
+	function type  :  void
+	function input :  Array length , Array pointer 
+	function output:  print all statistics of the array
+	function return:  None
+*/
+void print_statistics(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
+
+
+}
+
+
+
+
 
 void main() {
 
