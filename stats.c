@@ -23,9 +23,25 @@
 
 #include <stdio.h>
 #include "stats.h"
+unsigned char find_max2(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned char max ;
+  max = *un_ch_arr_ptr;
+  unsigned char x = 0 ;
+  for(char i = 0 ; i < un_i_arr_len ; i++)
+  {
+     if(*(un_ch_arr_ptr+i)>max){
+        max = *(un_ch_arr_ptr+i) ;
+        x = i ;
+     }
+  }
+  return x ;  
 
+
+}
 /* Size of the Data Set */
 #define SIZE (40)
+
+
 /*
 	function name  : find_min
 	function type  : unsigned integer 
@@ -34,8 +50,16 @@
 	function return: the min number of the array
 */
 
-unsigned int find_min(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
-
+unsigned char find_min(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned char min ;
+  min = *un_ch_arr_ptr;
+  for(char i = 0 ; i < un_i_arr_len ; i++)
+  {
+     if(*(un_ch_arr_ptr+i)<min){
+        min = *(un_ch_arr_ptr+i) ;
+     }
+  }
+  return min ;  
 
 
 }
@@ -49,11 +73,16 @@ unsigned int find_min(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
 	function return: the max number of the array
 */
 
-unsigned int find_max(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
-
-
-
-
+unsigned char find_max(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned char max ;
+  max = *un_ch_arr_ptr;
+  for(char i = 0 ; i < un_i_arr_len ; i++)
+  {
+     if(*(un_ch_arr_ptr+i)>max){
+        max = *(un_ch_arr_ptr+i) ;
+     }
+  }
+  return max ;
 }
 
 
@@ -70,10 +99,17 @@ unsigned int find_max(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
 	function output: None
 	function return: the mean of the array
 */
-unsigned int find_mean(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
-
-
-
+unsigned char find_mean(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned int sum=0;
+  for(char a = 0 ; a < un_i_arr_len ; a++)
+  {
+  	sum+=*(un_ch_arr_ptr+a);
+  	//printf("SUM = %d \n",sum);
+  }
+  unsigned char mean ;
+  mean = sum / un_i_arr_len ;
+  //printf("SUM = %d \n",sum);
+  return mean;
 }
 
 
@@ -89,12 +125,24 @@ unsigned int find_mean(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
 	function output: None
 	function return: find the median of the array
 */
-unsigned int find_median(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len){
-
-
-
-
-
+unsigned char find_median(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned char arr[un_i_arr_len];
+  for (char a = 0 ; a < un_i_arr_len ; a++ )
+  {
+  	arr[a]=*(un_ch_arr_ptr+a);
+  }
+  unsigned char arr1[un_i_arr_len];
+  unsigned char max ;
+  for(char b = 0 ; b < un_i_arr_len ; b++ )
+  {
+  	max = find_max2(&arr[0],un_i_arr_len);
+  	arr1[b] = arr[max];
+  	arr[max] = 0 ;
+  	
+  }
+  unsigned char median ;
+  median = arr1[(un_i_arr_len+1)/2];
+  return median;  
 }
 
 
@@ -111,10 +159,21 @@ unsigned int find_median(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len)
 	function return: sorted array from largest to smallest
 */
 
-unsigned int array_sort(unsigned int *arr_ptr ,unsigned int arr_len){
-
-
-
+void array_sort(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned char arr[un_i_arr_len];
+  for (char a = 0 ; a < un_i_arr_len ; a++ )
+  {
+  	arr[a]=*(un_ch_arr_ptr+a);
+  }
+  //unsigned char arr1[un_i_arr_len];
+  unsigned char max ;
+  for(char b = 0 ; b < un_i_arr_len ; b++ )
+  {
+  	max = find_max2(&arr[0],un_i_arr_len);
+  	*(un_ch_arr_ptr+b) = arr[max];
+  	arr[max] = 0 ;
+  	
+  }
 }
 
 
@@ -125,9 +184,13 @@ unsigned int array_sort(unsigned int *arr_ptr ,unsigned int arr_len){
 	function output: print all array
 	function return: None 
 */ 
-void print_array(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len){
+void print_array(unsigned char * un_ch_arr_ptr ,unsigned int un_i_arr_len){
 
-
+  for(char i =0 ; i < un_i_arr_len-1 ; i++)
+  {
+    printf(" %d ,",*(un_ch_arr_ptr+i));
+  }
+  printf(" %d \n",*(un_ch_arr_ptr+un_i_arr_len-1));
 
 
 }
@@ -141,9 +204,22 @@ void print_array(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len){
 	function output:  print all statistics of the array
 	function return:  None
 */
-void print_statistics(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len){
-
-
+void print_statistics(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len){
+  unsigned char max ;
+  max = find_max(un_ch_arr_ptr , un_i_arr_len);
+  printf("MAXIMUM NUMBER IS %d \n",max);
+  unsigned char min ;
+  min = find_min(un_ch_arr_ptr , un_i_arr_len);
+  printf("MINIMUM NUMBER IS %d \n",min);
+  unsigned char med ;
+  med = find_median(un_ch_arr_ptr , un_i_arr_len);
+  printf("MEDIAN NUMBER IS %d \n",med);
+  unsigned char mean ;
+  mean = find_mean(un_ch_arr_ptr , un_i_arr_len);
+  printf("MEAN NUMBER IS %d \n",mean);
+  array_sort(un_ch_arr_ptr , un_i_arr_len);
+  printf("SORTED ARRAY IS ");
+  print_array(un_ch_arr_ptr , un_i_arr_len);
 }
 
 
@@ -160,7 +236,8 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
+  print_array(&test[0],SIZE);
+  print_statistics(&test[0] , SIZE );
 }
 
 /* Add other Implementation File Code Here */

@@ -30,7 +30,7 @@
 	function output:  print all statistics of the array
 	function return:  None
 */
-void print_statistics(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
+void print_statistics(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len);
 
 
 
@@ -41,7 +41,7 @@ void print_statistics(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
 	function output: print all array
 	function return: None 
 */ 
-void print_array(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len);
+void print_array(unsigned char * un_ch_arr_ptr ,unsigned int un_i_arr_len);
 
 
 /*
@@ -51,7 +51,7 @@ void print_array(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len);
 	function output: None
 	function return: find the median of the array
 */
-unsigned int find_median(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len);
+unsigned char find_median(unsigned char * un_ch_arr_ptr ,unsigned int un_i_arr_len);
 /*
 	function name  : find_mean
 	function type  : unsigned integer
@@ -59,7 +59,7 @@ unsigned int find_median(unsigned int * un_i_arr_ptr ,unsigned int un_i_arr_len)
 	function output: None
 	function return: the mean of the array
 */
-unsigned int find_mean(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
+unsigned char find_mean(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len);
 
 /*
 	function name  : find_max
@@ -69,7 +69,7 @@ unsigned int find_mean(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
 	function return: the max number of the array
 */
 
-unsigned int find_max(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
+unsigned char find_max(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len);
 
 
 /*
@@ -80,7 +80,7 @@ unsigned int find_max(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
 	function return: the min number of the array
 */
 
-unsigned int find_min(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
+unsigned char find_min(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len);
 
 /*
 	function name  : array_sort
@@ -90,7 +90,7 @@ unsigned int find_min(unsigned int *un_i_arr_ptr ,unsigned int un_i_arr_len);
 	function return: sorted array from largest to smallest
 */
 
-unsigned int array_sort(unsigned int *arr_ptr ,unsigned int arr_len);
+void array_sort(unsigned char *un_ch_arr_ptr ,unsigned int un_i_arr_len);
 
 
 /**
